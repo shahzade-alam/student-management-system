@@ -18,6 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
+|-------------------------
+| PUBLIC ROUTES
+|-------------------------
+*/
+
 // frontend Start Route
 
 // middleware
@@ -44,9 +50,14 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/reset-password', [ResetPasswordController::class, 'store'])->name('reset.passwordpost');
 });
 
-// Frontend End Route
 
 
+
+/*
+|-------------------------
+| PROTECTED ROUTES
+|-------------------------
+*/
 
 // Backend Start Route
 Route::middleware(['auth'])->group(function () {
